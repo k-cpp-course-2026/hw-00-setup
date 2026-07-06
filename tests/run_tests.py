@@ -105,11 +105,14 @@ def main():
 
         student = sys.argv[3]
         problem_id = sys.argv[4]
+        db_path = environ["SAVE_SCORE_DB"]
         
         print(f'Student: {student}')
         print(f'Problem id: {problem_id}')
+        print(f'DB file {db_path}')
 
-        update_score(environ["SAVE_SCORE_DB"], student, problem_id, all_passed)
+        update_score(db_path, student, problem_id, all_passed)
+
 
     sys.exit(0 if all_passed else 1)
 
