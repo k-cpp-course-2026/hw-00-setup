@@ -15,4 +15,4 @@ jobs:
       - name: Run public tests
         env:
             SAVE_SCORE_DB: ~/score.db
-        run: python3 tests/run_tests.py build/hw-00-setup tests "${{ github.event.pull_request.user.login }}" hw00
+        run: python3 tests/run_tests.py build/hw-00-setup tests "${{ github.event.pull_request.user.login }}" 0

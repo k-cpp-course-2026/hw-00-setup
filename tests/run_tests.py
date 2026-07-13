@@ -4,6 +4,7 @@ import json
 import pathlib
 from os import environ
 import difflib
+import os
 
 
 def update_score(db_path, student, problem_id, score):
@@ -105,11 +106,16 @@ def main():
 
         student = sys.argv[3]
         problem_id = sys.argv[4]
+        db_path = environ["SAVE_SCORE_DB"]
+        db_path_resolved = os.path.abspath(os.path.expanduser(db_path))
         
         print(f'Student: {student}')
         print(f'Problem id: {problem_id}')
+        print(f'DB file {db_path}')
+        print("DB path resolved to:", db_path_resolved)
 
-        update_score(environ["SAVE_SCORE_DB"], student, problem_id, all_passed)
+        update_score(db_path_resolved, student, problem_id, all_passed)
+
 
     sys.exit(0 if all_passed else 1)
 
