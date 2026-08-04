@@ -2,6 +2,6 @@
 #include <iostream>
 
 int main() {
-	// awdawd
+	std::cout <<"Hello world!";
     // Write yout code here
 }
