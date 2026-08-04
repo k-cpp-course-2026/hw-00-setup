@@ -2,6 +2,6 @@
 #include <iostream>
 
 int main() {
-	awdawd
+	// awdawd
     // Write yout code here
 }
